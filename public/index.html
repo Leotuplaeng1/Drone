@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Drone Commander</title>
+</head>
+<body>
+    <h1>Drone Commander</h1>
+
+    <div id="config"></div>
+
+    <div id="logging">
+        <form id="my-form" method="post">
+            <label for="temperature">Temperature :</label>
+            <input type="text" name="temperature" id="temperature" value="25">
+            <button type="submit">Submit Temperature</button>
+        </form>
+    </div>
+
+    <div id="status"></div>
+
+    <h2>View Logs</h2>
+    <table id="logs-table" border="1">
+        <thead>
+            <tr>
+                <th>Created</th>
+                <th>Country</th>
+                <th>Drone ID</th>
+                <th>Drone Name</th>
+                <th>Celsius</th>
+            </tr>
+        </thead>
+        <tbody id="logs-body">
+            
+        </tbody>
+    </table>
+
+    <footer> Copyright © Setthawut Oonsamli 65011153</footer>
+
+    <script src="main.js"></script>
+</body>
+</html>
