@@ -3,16 +3,15 @@ const fetch = require("node-fetch");
 const cors = require("cors");
 const path = require("path"); 
 const app = express();
-const port = 8000;
+const port = process.env.PORT || 8000; 
 
 app.use(cors());
 app.use(express.json());
 
-app.use(express.static(path.join(__dirname, "public")));
+app.use(express.static(path.join(__dirname, "public"))); 
 
-const config_url = "https://script.google.com/macros/s/AKfycbzwclqJRodyVjzYyY-NTQDb9cWG6Hoc5vGAABVtr5-jPA_ET_2IasrAJK4aeo5XoONiaA/exec";
-const logs_url = "https://app-tracking.pockethost.io/api/collections/drone_logs/records";
-
+const config_url = process.env.CONFIG_URL || "https://script.google.com/macros/s/AKfycbzwclqJRodyVjzYyY-NTQDb9cWG6Hoc5vGAABVtr5-jPA_ET_2IasrAJK4aeo5XoONiaA/exec";
+const logs_url = process.env.LOGS_URL || "https://app-tracking.pockethost.io/api/collections/drone_logs/records";
 
 app.get("/configs/:my_id", async (req, res) => {
     const id = req.params.my_id;
